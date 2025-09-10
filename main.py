@@ -19,12 +19,17 @@ def home():
 
 async def update_bio():
     while True:
-        now = datetime.datetime.now().strftime("🕒 %H:%M")
+        # گرفتن زمان UTC و تبدیل به ساعت ایران (UTC+3:30)
+        utc_now = datetime.datetime.utcnow()
+        iran_time = utc_now + datetime.timedelta(hours=3, minutes=30)
+        now_str = iran_time.strftime("🕒 %H:%M")
+
         try:
-            await client(functions.account.UpdateProfileRequest(about=now))
-            print(f"بیو آپدیت شد به: {now}")
+            await client(functions.account.UpdateProfileRequest(about=now_str))
+            print(f"بیو آپدیت شد به: {now_str}")
         except Exception as e:
             print("❌ خطا:", e)
+
         await asyncio.sleep(60)
 
 async def runner():
