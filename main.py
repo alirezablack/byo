@@ -31,7 +31,7 @@ async def update_bio():
         bold_time = bold_numbers(time_str)
 
         # بیو با ساعت بولد و شکلک 🕒
-        bio_text = f"🕒 {bold_time} | Bio Updater"
+        bio_text = f"🕒 {bold_time}"
 
         try:
             await client(functions.account.UpdateProfileRequest(about=bio_text))
@@ -57,4 +57,5 @@ if __name__ == "__main__":
 
     # اجرای Flask برای Render
     app.run(host="0.0.0.0", port=10000)
+
 
