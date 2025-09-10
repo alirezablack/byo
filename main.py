@@ -5,9 +5,9 @@ from flask import Flask
 import threading
 
 # --------------------
-api_id = 12128667
-api_hash = "ff5f1b17331d23aa0329ced7f255d408"
-string = "1BJWap1sBu3vVPj6cwAjRVwxK-2Mbc9qw8VKzSyUk2QnWWHEuQHOYprYRX4z6GhHEph3mJ1hlzkCKNRYduZfeQM0n-JNIEx7qgWhoLRHcozuhLhDEOdKPdtxrcTiv0rm2Yz5KHYQAe6ZVdHpLbRC73QvQJsnVq-fiQDp5HH-wZpp19YOPpi9KAV6YTb5M1mJlnRdD8sA3dLnbzuALDSqgNkd_IbQY2Bv8Fe-SNSkLbyIfzKeY26ERLLbwAZnhXrmEk1OZTcpQfO6vna49RzD1qMMprJ0P4R2AS-4Akl-wwjCtBKXHdb-GFN594COSIblxmscnqJUcx0NhRgUr_M-8O_NtsMNlWmI="
+api_id = 28069133
+api_hash = "5ca91588221d1dd9c46d0df1dd4768f0"
+string = "1BJWap1sBu3S7VzzCfs5ehWqeK_V6m-6y6tXVMqJ-XGBnSIvNpCcLnfTp78NJuWpPsFA1rhgwMWq3JjWoceV0h7FGYwZkhFmwPj0ssvEjNMRBfs6UsCY_NGADx28bmCHtrunULcdwrmkvYEcJvuouZLJXF9sh0Xs2mbIjnoSTKXVaT8NfPOyp8-3la_l3uYfff1MfZ8muINNcHxkO1wAjfS9f77pDCbSUOItqTOaut9XdciD2p37h4UDyQ18Sgid2hlN1gLXLO51Vg8a0VSQLTuPl6v8IlA2SAs5g6FcMZR6O3r9KItHFmVoYiK7hsOXhBDcXeG0BeCLGG8pMjVl29aA07uuZiWw="
 # --------------------
 
 client = TelegramClient(StringSession(string), api_id, api_hash)
@@ -57,3 +57,4 @@ if __name__ == "__main__":
 
     # اجرای Flask برای Render
     app.run(host="0.0.0.0", port=10000)
+
