@@ -17,16 +17,25 @@ app = Flask(__name__)
 def home():
     return "Bio Updater Running ✅"
 
+# تابع برای تبدیل اعداد به بولد
+def bold_numbers(time_str):
+    bold_map = str.maketrans("0123456789", "𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗")
+    return time_str.translate(bold_map)
+
 async def update_bio():
     while True:
-        # گرفتن زمان UTC و تبدیل به ساعت ایران (UTC+3:30)
+        # زمان UTC و تبدیل به ایران
         utc_now = datetime.datetime.utcnow()
         iran_time = utc_now + datetime.timedelta(hours=3, minutes=30)
-        now_str = iran_time.strftime("🕒 %H:%M")
+        time_str = iran_time.strftime("%H:%M")
+        bold_time = bold_numbers(time_str)
+
+        # بیو با ساعت بولد و شکلک 🕒
+        bio_text = f"🕒 {bold_time} | Bio Updater"
 
         try:
-            await client(functions.account.UpdateProfileRequest(about=now_str))
-            print(f"بیو آپدیت شد به: {now_str}")
+            await client(functions.account.UpdateProfileRequest(about=bio_text))
+            print(f"بیو آپدیت شد به: {bio_text}")
         except Exception as e:
             print("❌ خطا:", e)
 
