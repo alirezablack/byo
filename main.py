@@ -3,8 +3,8 @@ import asyncio, datetime
 from flask import Flask
 
 # --------------------
-api_id = 123456          # اینو از my.telegram.org بگیر
-api_hash = "abcdef1234"  # اینو هم از my.telegram.org بگیر
+api_id = 12128667          # اینو از my.telegram.org بگیر
+api_hash = "ff5f1b17331d23aa0329ced7f255d408"  # اینو هم از my.telegram.org بگیر
 # --------------------
 
 client = TelegramClient("bio_updater", api_id, api_hash)
@@ -32,3 +32,4 @@ if __name__ == "__main__":
     loop = asyncio.get_event_loop()
     loop.create_task(main())
     app.run(host="0.0.0.0", port=10000)
+
